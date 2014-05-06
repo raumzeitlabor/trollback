@@ -1,0 +1,8 @@
+DB_FILE = "history.db"
+XIVELY_API_KEY = ""
+XIVELY_FEED = 0
+XIVELY_ID = ""
+PAYBACK_USER = ""
+PAYBACK_PIN = ""
+CSV_FILE = "history.csv"
+
