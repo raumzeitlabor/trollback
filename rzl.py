@@ -29,7 +29,7 @@ def is_payout(item):
 
 payback = Payback()
 if payback.login(PAYBACK_USER, PAYBACK_PIN):
-    history = payback.history()
+    history = payback.history(pages=20)
     lastday = None
     daycount = 0
     daycount_known = 0

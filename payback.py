@@ -40,11 +40,11 @@ class Payback:
         else:
             return False
 
-    def history(self):
+    def history(self, pages):
         i = 1
         res = []
         lastdate = None
-        while True:
+        while i <= pages:
             r = self.session.get("https://www.payback.de/pb/punktekonto/pgn/%d/id/13598/" % i)
             soup = BeautifulSoup(r.content.decode("windows-1252"))
             trs = soup.select("table.mypoints tbody tr")
@@ -58,5 +58,6 @@ class Payback:
                 })
             if len(trs) == 0:
                 break
+            lastdate = res[-1]['date']
             i += 1
-        return res
+        return [r for r in res if r['date'] != lastdate]
