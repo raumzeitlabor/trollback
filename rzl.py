@@ -25,7 +25,7 @@ feed = api.feeds.get(XIVELY_FEED)
 now = datetime.datetime.utcnow()
 
 def is_payout(item):
-    return 'ausgezahlt' in item['action'] or 'Wertscheckausdruck' in item['action']
+    return 'ausgezahlt' in item['action'] or 'Wertscheckausdruck' in item['action'] or 'Punkte eingel' in item['action']
 
 payback = Payback()
 if payback.login(PAYBACK_USER, PAYBACK_PIN):
